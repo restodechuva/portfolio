@@ -9,92 +9,7 @@ import AnimatedContent from '@/app/utils/AnimatedContent';
 import FadeContent from '@/app/utils/FadeContent';
 
 
-function ToshokanTooltip() {
-  const [videoLoaded, setVideoLoaded] = require('react').useState(false);
-  return (
-    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: 260, maxWidth: 340 }}>
-      {!videoLoaded && (
-        <div style={{ width: '100%', height: 190, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#181818', borderRadius: 8 }}>
-          <div style={{
-            width: 40,
-            height: 40,
-            border: '4px solid #fff',
-            borderTop: '4px solid #3178c6',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite'
-          }} />
-          <style>{`
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          `}</style>
-        </div>
-      )}
-      <video
-        src="/videos/toshokan.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          width: '100%',
-          maxWidth: 320,
-          height: 'auto',
-          borderRadius: 8,
-          boxShadow: '0 4px 24px rgba(0,0,0,0.25)',
-          objectFit: 'cover',
-          maxHeight: 190,
-          background: '#181818',
-          display: videoLoaded ? 'block' : 'none'
-        }}
-        onLoadedData={() => setVideoLoaded(true)}
-      />
-      <div style={{
-        position: 'absolute',
-        left: 12,
-        bottom: 12,
-        display: 'flex',
-        gap: 8,
-        background: 'none',
-        alignItems: 'center',
-      }}>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          background: '#ff3e00',
-          borderRadius: 6,
-          padding: '2px 10px 2px 6px',
-          boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
-          border: '1px solid #ff3e00',
-          fontWeight: 500,
-          fontSize: 13,
-          color: '#fff',
-          gap: 6,
-        }}>
-          <img src="/software/svelte.png" alt="Svelte" style={{ width: 18, height: 18, marginRight: 2 }} />
-          <span style={{ color: '#fff' }}>Svelte</span>
-        </div>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          background: '#3178c6',
-          borderRadius: 6,
-          padding: '2px 10px 2px 6px',
-          boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
-          border: '1px solid #3178c6',
-          fontWeight: 500,
-          fontSize: 13,
-          color: '#fff',
-          gap: 6,
-        }}>
-          <img src="/software/typescript.png" alt="TypeScript" style={{ width: 18, height: 18, marginRight: 2 }} />
-          <span style={{ color: '#fff' }}>TypeScript</span>
-        </div>
-      </div>
-    </div>
-  );
-}
+import Tooltip from './Tooltip';
 
 const Projects = () => {
   const { language, translations } = useLang();
@@ -132,7 +47,27 @@ const Projects = () => {
               image: "/toshokan.png",
               id: "toshokan",
               link: "https://toshokan-azure.vercel.app/",
-              tooltip: <ToshokanTooltip />
+              tooltip: (
+                <Tooltip
+                  languages={["Svelte", "TypeScript"]}
+                  chipColors={{ Svelte: "#ff3e00", TypeScript: "#3178c6" }}
+                  videoPath="/videos/toshokan.mp4"
+                >
+                  <></>
+                </Tooltip>
+              )
+            },
+            {
+              text: "Crowbar API",
+              image: "/crowbar.png",
+              id: "crowbar",
+              link: "https://github.com/morangoo/crowbar"
+            },
+            {
+              text: "CSManager",
+              image: "/csmanager.png",
+              id: "csmanager",
+              link: "https://github.com/morangoo/csmanager"
             },
             {
               text: "Work in Progress (WIP)",
