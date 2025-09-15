@@ -52,9 +52,7 @@ const Projects = () => {
                   languages={["Svelte", "TypeScript"]}
                   chipColors={{ Svelte: "#ff3e00", TypeScript: "#3178c6" }}
                   videoPath="/videos/toshokan.mp4"
-                >
-                  <></>
-                </Tooltip>
+                />
               )
             },
             {
