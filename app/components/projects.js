@@ -58,12 +58,6 @@ const Projects = () => {
               )
             },
             {
-              text: "Crowbar API",
-              image: "/crowbar.png",
-              id: "crowbar",
-              link: "https://github.com/morangoo/crowbar"
-            },
-            {
               text: "CSManager",
               image: "/csmanager.png",
               id: "csmanager",
@@ -83,6 +77,12 @@ const Projects = () => {
               text: "Work in Progress (WIP)",
               image: "https://i.imgur.com/E4TifXR.jpeg",
               id: "WIP"
+            },
+            {
+              text: "Crowbar API",
+              image: "/crowbar.png",
+              id: "crowbar",
+              link: "https://github.com/morangoo/crowbar"
             },
           ]}
         />
