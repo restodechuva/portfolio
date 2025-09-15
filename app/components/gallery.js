@@ -78,35 +78,17 @@ const Gallery = () => {
   return (
     <div id="gallery" className="gallery-container">
       <h1 className="gallery-title">
-        <AnimatedContent
-            distance={150}
-            direction={'vertical'}
-            config={{ tension: 80, friction: 20 }}
-            initialOpacity={0.2}
-            animateOpacity
-            scale={1.1}
-            threshold={0.2}
-            >
-            <DecryptedText
-            text={translations?.galleryScreen?.title || ''}
-            animateOn="view"
-            revealDirection="start"
-            speed={50}
-            sequential={true}
-            useOriginalCharsOnly={true}
-            />
-        </AnimatedContent>
+        <DecryptedText
+          text={translations?.galleryScreen?.title || ''}
+          animateOn="view"
+          revealDirection="start"
+          speed={50}
+          sequential={true}
+          useOriginalCharsOnly={true}
+        />
       </h1>
       
       <div className='gallery-list-container' style={{ height: '55%', width: '90%' }}>
-        <AnimatedContent
-            distance={150}
-            direction={'vertical'}
-            config={{ tension: 80, friction: 20 }}
-            initialOpacity={0.2}
-            animateOpacity
-            threshold={0.2}
-            >
         <Masonry
           items={items}
           ease="power3.out"
@@ -118,7 +100,6 @@ const Gallery = () => {
           blurToFocus={true}
           colorShiftOnHover={false}
         />
-        </AnimatedContent>
       </div>
     </div>
   );
