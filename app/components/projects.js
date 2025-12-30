@@ -138,7 +138,7 @@ const Projects = () => {
               text: "CSManager",
               image: "/csmanager.png",
               id: "csmanager",
-              link: "https://github.com/morangoo/csmanager"
+              link: "https://github.com/restodechuva/csmanager"
             },
             {
               text: "Work in Progress (WIP)",
@@ -159,7 +159,7 @@ const Projects = () => {
               text: "Crowbar API",
               image: "/crowbar.png",
               id: "crowbar",
-              link: "https://github.com/morangoo/crowbar"
+              link: "https://github.com/restodechuva/crowbar"
             },
           ]}
         />
